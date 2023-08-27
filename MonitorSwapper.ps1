@@ -43,7 +43,7 @@ try {
                 }
                 else {
                     if (((Get-Date) - $lastStreamed).TotalSeconds -gt $gracePeriod) {
-                        New-Event -SourceIdentifier MonitorSwapper -MessageData "End"
+                        # New-Event -SourceIdentifier MonitorSwapper -MessageData "End"
                         break;
                     }
         
