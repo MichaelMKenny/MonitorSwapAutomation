@@ -25,6 +25,10 @@ if (-not $mutex.WaitOne(0)) {
     exit
 }
 
+if ($env:SUNSHINE_CLIENT_HDR -eq "false") {
+    exit
+}
+
 try {
     
     # Asynchronously start the MonitorSwapper, so we can use a named pipe to terminate it.

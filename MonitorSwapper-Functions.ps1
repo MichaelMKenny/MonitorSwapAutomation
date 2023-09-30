@@ -1,5 +1,9 @@
 param($terminate)
 
+if ($env:SUNSHINE_CLIENT_HDR -eq "false") {
+    exit
+}
+
 Set-Location (Split-Path $MyInvocation.MyCommand.Path -Parent)
 $settings = Get-Content -Path .\settings.json | ConvertFrom-Json
 $configSaveLocation = [System.Environment]::ExpandEnvironmentVariables($settings.configSaveLocation)
